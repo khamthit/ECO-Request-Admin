@@ -6,6 +6,10 @@ const path = require('path');
 const formtypeRoute = require('./routes/formtypeRoutes');
 const authMiddleware = require('./middleware/authMiddleware');
 const userclientRoute = require('./routes/userclientRoutes');
+const loadimporterRoute = require('./routes/loadimporterRoutes');
+const portdischargerRoute = require('./routes/portdischargerRoutes');
+const laohscodeRoute = require('./routes/laohscodeRoutes');
+const origincriterionRoute = require('./routes/origincriterionRoutes');
 
 const pathimage = "http://10.0.100.31:4481";
 
@@ -22,6 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/userAdmin', userclientRoute);
 // Protected route. The authMiddleware will run first to verify the token.
 app.use('/api/formtypeAdmin', authMiddleware, formtypeRoute);
+app.use('/api/loadimporterAdmin', authMiddleware, loadimporterRoute);
+app.use('/api/portdischargerAdmin', authMiddleware, portdischargerRoute);
+app.use('/api/laohscodeAdmin', authMiddleware, laohscodeRoute);
+app.use('/api/origincriterionAdmin', authMiddleware, origincriterionRoute);
 
 
 //this is upload file image
