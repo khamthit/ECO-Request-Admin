@@ -151,5 +151,6 @@ class portdischargerController {
       return SendError(res, 500, "Error deleting port discharger.");
     }
   }
+
 }
 module.exports = portdischargerController;

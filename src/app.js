@@ -10,7 +10,9 @@ const loadimporterRoute = require('./routes/loadimporterRoutes');
 const portdischargerRoute = require('./routes/portdischargerRoutes');
 const laohscodeRoute = require('./routes/laohscodeRoutes');
 const origincriterionRoute = require('./routes/origincriterionRoutes');
-
+const invoiceRoute = require('./routes/invoiceRoutes');
+const unitRoutes = require('./routes/unitRoutes');
+const weighttypeRoutes   = require('./routes/weighttypeRoutes');
 const pathimage = "http://10.0.100.31:4481";
 
 const app = express();
@@ -30,6 +32,11 @@ app.use('/api/loadimporterAdmin', authMiddleware, loadimporterRoute);
 app.use('/api/portdischargerAdmin', authMiddleware, portdischargerRoute);
 app.use('/api/laohscodeAdmin', authMiddleware, laohscodeRoute);
 app.use('/api/origincriterionAdmin', authMiddleware, origincriterionRoute);
+app.use('/api/invoiceAdmin', authMiddleware, invoiceRoute);
+app.use('/api/unitAdmin', authMiddleware, unitRoutes);
+app.use('/api/weighttypeAdmin', authMiddleware, weighttypeRoutes);
+
+
 
 
 //this is upload file image
