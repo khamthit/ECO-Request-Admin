@@ -13,6 +13,10 @@ const origincriterionRoute = require('./routes/origincriterionRoutes');
 const invoiceRoute = require('./routes/invoiceRoutes');
 const unitRoutes = require('./routes/unitRoutes');
 const weighttypeRoutes   = require('./routes/weighttypeRoutes');
+const rolegroupRoutes = require('./routes/rolegroupRoutes');
+const rolegroupdetailsRoutes = require('./routes/rolegroupdetailsRoutes');
+const groupapproveRoutes = require('./routes/groupapproveRoutes');
+
 const pathimage = "http://10.0.100.31:4481";
 
 const app = express();
@@ -35,6 +39,11 @@ app.use('/api/origincriterionAdmin', authMiddleware, origincriterionRoute);
 app.use('/api/invoiceAdmin', authMiddleware, invoiceRoute);
 app.use('/api/unitAdmin', authMiddleware, unitRoutes);
 app.use('/api/weighttypeAdmin', authMiddleware, weighttypeRoutes);
+app.use('/api/rolegroupAdmin', authMiddleware, rolegroupRoutes);
+app.use('/api/rolegroupdetailsAdmin', authMiddleware, rolegroupdetailsRoutes);
+app.use('/api/groupapproveAdmin', authMiddleware, groupapproveRoutes);
+
+
 
 
 
